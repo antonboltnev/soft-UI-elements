@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f1f1f1;
+  }
+
+  .btn.soft {
+    position: relative;
+    width: 50px;
+    height: 90px;
+    cursor: pointer;
+    color: #d2d2d2;
+    padding: 0 22px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    background: #f1f1f1;
+    box-shadow: 4px 3px 6px -2px rgba(0, 0, 0, 0.2), -4px -5px 6px 0 rgba(255, 255, 255, 0.70), inset 4px 3px 3px -2px rgba(0, 0, 0, 0), inset -4px -5px 6px 0 rgba(255, 255, 255, 0);
+    transition: all .3s;
+  }
+  .btn.soft:before {
+    content: '\2605';
+    position: absolute;
+    top: -5px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn.soft:hover {
+    box-shadow: 4px 3px 3px -2px rgba(0, 0, 0, 0), -4px -5px 6px 0 rgba(255, 255, 255, 0), inset 4px 3px 7px -2px rgba(0, 0, 0, 0.2), inset -4px -5px 6px 0 rgba(255, 255, 255, 0.70);
+    font-size: 37px;
+  }
+</style>
+<body>
+
+<span class="btn soft"></span>
+
+
+</body>
+</html>
