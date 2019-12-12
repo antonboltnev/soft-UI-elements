@@ -15,7 +15,7 @@
     background: #f1f1f1;
   }
 
-  .btn.soft {
+  .btn {
     position: relative;
     width: 50px;
     height: 90px;
@@ -31,7 +31,7 @@
     box-shadow: 4px 3px 6px -2px rgba(0, 0, 0, 0.2), -4px -5px 6px 0 rgba(255, 255, 255, 0.70), inset 4px 3px 3px -2px rgba(0, 0, 0, 0), inset -4px -5px 6px 0 rgba(255, 255, 255, 0);
     transition: all .3s;
   }
-  .btn.soft:before {
+  .btn:before {
     content: '\2605';
     position: absolute;
     top: -5px;
@@ -40,15 +40,23 @@
     justify-content: center;
     align-items: center;
   }
-  .btn.soft:hover {
+  .btn.active {
     box-shadow: 4px 3px 3px -2px rgba(0, 0, 0, 0), -4px -5px 6px 0 rgba(255, 255, 255, 0), inset 4px 3px 7px -2px rgba(0, 0, 0, 0.2), inset -4px -5px 6px 0 rgba(255, 255, 255, 0.70);
     font-size: 37px;
   }
 </style>
 <body>
 
-<span class="btn soft"></span>
-
+<span id="btn" class="btn soft"></span>
+<script type="text/javascript">
+  let btn = document.getElementById('btn');
+  btn.addEventListener('mousedown', function () {
+    btn.classList.toggle('active', true);
+  })
+  btn.addEventListener('mouseup', function () {
+    btn.classList.toggle('active', false);
+  })
+</script>
 
 </body>
 </html>
