@@ -9,29 +9,45 @@
 <style>
   body {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    flex-direction: column;
     background: #f1f1f1;
   }
 
-  .btn {
+  .soft {
+    background: #f1f1f1;
+    color: #a6a6a6;
+    box-shadow: 4px 3px 6px -2px rgba(0, 0, 0, 0.2), -4px -5px 6px 0 rgba(255, 255, 255, 0.70), inset 4px 3px 3px -2px rgba(0, 0, 0, 0), inset -4px -5px 6px 0 rgba(255, 255, 255, 0);
+    transition: all .3s;
+  }
+
+  .soft.active {
+    box-shadow: 4px 3px 3px -2px rgba(0, 0, 0, 0), -4px -5px 6px 0 rgba(255, 255, 255, 0), inset 4px 3px 7px -2px rgba(0, 0, 0, 0.2), inset -4px -5px 6px 0 rgba(255, 255, 255, 0.70);
+  }
+
+  .container {
+    padding: 16px 32px;
+    border-radius: 8px;
+  }
+
+  .icon {
     position: relative;
     width: 50px;
     height: 90px;
     cursor: pointer;
-    color: #d2d2d2;
-    padding: 0 22px;
     border-radius: 50%;
+    padding: 0 22px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    background: #f1f1f1;
-    box-shadow: 4px 3px 6px -2px rgba(0, 0, 0, 0.2), -4px -5px 6px 0 rgba(255, 255, 255, 0.70), inset 4px 3px 3px -2px rgba(0, 0, 0, 0), inset -4px -5px 6px 0 rgba(255, 255, 255, 0);
-    transition: all .3s;
   }
-  .btn:before {
+  .icon:before {
     content: '\2605';
     position: absolute;
     top: -5px;
@@ -40,22 +56,32 @@
     justify-content: center;
     align-items: center;
   }
-  .btn.active {
-    box-shadow: 4px 3px 3px -2px rgba(0, 0, 0, 0), -4px -5px 6px 0 rgba(255, 255, 255, 0), inset 4px 3px 7px -2px rgba(0, 0, 0, 0.2), inset -4px -5px 6px 0 rgba(255, 255, 255, 0.70);
-    font-size: 37px;
+  .btn {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 4px;
+    padding: 8px 16px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
   }
 </style>
 <body>
-
-<span id="btn" class="btn soft"></span>
+<div class="container soft">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</div>
+<span id="icon" class="icon soft" onclick="elemClick(id)"></span>
+<button id="btn" class="btn soft" onclick="elemClick(id)">Press</button>
 <script type="text/javascript">
-  let btn = document.getElementById('btn');
-  btn.addEventListener('mousedown', function () {
-    btn.classList.toggle('active', true);
-  })
-  btn.addEventListener('mouseup', function () {
-    btn.classList.toggle('active', false);
-  })
+  function elemClick(id) {
+    let el = document.getElementById(id);
+    el.addEventListener('mousedown', function () {
+      el.classList.toggle('active', true);
+    });
+    el.addEventListener('mouseup', function () {
+      el.classList.toggle('active', false);
+    })
+  }
 </script>
 
 </body>
