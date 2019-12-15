@@ -7,15 +7,15 @@
     <soft-btn-icon
         class="soft"
     />
-    <soft-container
-        class="soft"
-        :content="content"
-    />
     <soft-dropdown
         class="soft"
         :options="dropDownOptions"
         :selectedOption="dropDownSelectedOption"
         @select="dropDownSelection"
+    />
+    <soft-container
+        class="soft"
+        :content="content"
     />
   </div>
 </template>

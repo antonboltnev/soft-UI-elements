@@ -2,7 +2,7 @@
   <div
       class='soft-dropdown'
       :style="{'width': width + 'px'}"
-      @click="toggleDropdown"
+      @click.stop="showDropdown"
   >
     <div class="soft-dropdown__selected-option">
       <span>{{selectedOption.title}}</span>
@@ -21,7 +21,7 @@
             class="soft-dropdown__option"
             v-for="option in options"
             :key="option.value"
-            @click="selectOption(option)"
+            @click.stop="selectOption(option)"
         >{{option.title}}
         </div>
       </div>
@@ -57,12 +57,22 @@
     },
     computed: {},
     methods: {
-      toggleDropdown() {
-        this.isDropdownVisible = !this.isDropdownVisible;
+      showDropdown() {
+        this.isDropdownVisible = true;
+      },
+      hideDropdown() {
+          this.isDropdownVisible = false;
       },
       selectOption(option) {
         this.$emit('select', option)
+        this.hideDropdown()
       }
+    },
+    created() {
+      document.addEventListener('click', this.hideDropdown)
+    },
+    beforeDestroy() {
+      document.removeEventListener('click', this.hideDropdown)
     }
   }
 </script>
@@ -74,7 +84,7 @@
     cursor: pointer;
     &__options_wrapper {
       position: absolute;
-      top: 40px;
+      top: 45px;
       right: 0;
       width: 100%;
     }
@@ -91,6 +101,10 @@
     }
     &__option {
       padding: 16px 0;
+      transition: all ease .5s;
+      &:hover {
+        box-shadow: 4px 3px 3px -2px rgba(0, 0, 0, 0), -4px -5px 6px 0 rgba(255, 255, 255, 0), inset 4px 3px 7px -2px rgba(0, 0, 0, 0.2), inset -4px -5px 6px 0 rgba(255, 255, 255, 0.70);
+      }
     }
   }
 </style>
