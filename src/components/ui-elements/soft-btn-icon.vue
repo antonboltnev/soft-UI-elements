@@ -1,10 +1,12 @@
 <template>
   <div
-      class='soft-btn-icon'
+      class='soft-btn-icon soft'
       :class="{'active': isIconCLicked}"
       @mousedown="click"
       @mouseup="click"
-  ></div>
+  >
+    <i class="material-icons">start</i>
+  </div>
 </template>
 
 <script>
@@ -25,7 +27,6 @@
 
 <style lang="scss">
   .soft-btn-icon {
-    position: relative;
     width: 50px;
     height: 90px;
     cursor: pointer;
@@ -35,14 +36,10 @@
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    &:before {
-      content: '\2605';
-      position: absolute;
-      top: -5px;
-      bottom: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    user-select: none;
+    .material-icons {
+      width: 24px;
+      height: 24px;
     }
   }
 </style>

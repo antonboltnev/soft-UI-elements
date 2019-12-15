@@ -36,6 +36,7 @@
 <style lang="scss">
   .soft-btn {
     outline: none;
+    user-select: none;
     -webkit-tap-highlight-color: transparent;
     border-radius: $padding/2;
     padding: $padding $padding*2;

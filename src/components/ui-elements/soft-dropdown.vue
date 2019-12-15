@@ -87,6 +87,7 @@
       top: 45px;
       right: 0;
       width: 100%;
+      text-align: center;
     }
     &__selected-option {
       display: flex;
