@@ -11,6 +11,9 @@
         :selectedOption="dropDownSelectedOption"
         @select="dropDownSelection"
     />
+    <soft-textfield
+        v-model="textFieldModel"
+    />
     <flex-container
         class="justify-around align-baseline"
     >
@@ -39,6 +42,7 @@
   import softBtn from './ui-elements/soft-btn'
   import softBtnIcon from './ui-elements/soft-btn-icon'
   import softDropdown from './ui-elements/soft-dropdown'
+  import softTextfield from './ui-elements/soft-textfield'
   import softContainer from './ui-elements/layouts/soft-container'
   import softInsetContainer from './ui-elements/layouts/soft-inset-container'
   import flexContainer from './ui-elements/layouts/flex-container'
@@ -49,6 +53,7 @@
       softBtn,
       softBtnIcon,
       softDropdown,
+      softTextfield,
       softContainer,
       softInsetContainer,
       flexContainer
@@ -61,7 +66,8 @@
           {title: 'option 3', value: 3},
           {title: 'option 4', value: 4},
         ],
-        dropDownSelectedOption: {title: 'Select'}
+        dropDownSelectedOption: {title: 'Select'},
+        textFieldModel: ''
       }
     },
     methods: {

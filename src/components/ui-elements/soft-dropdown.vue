@@ -94,7 +94,7 @@
       justify-content: space-between;
       align-items: center;
       .material-icons {
-        transition: ease .5s;
+        transition: ease .3s;
         &.expanded {
           transform: rotate(-180deg);
         }
@@ -102,7 +102,7 @@
     }
     &__option {
       padding: 16px 0;
-      transition: all ease .5s;
+      transition: all ease .3s;
       &:hover {
         box-shadow: 4px 3px 3px -2px rgba(0, 0, 0, 0), -4px -5px 6px 0 rgba(255, 255, 255, 0), inset 4px 3px 7px -2px rgba(0, 0, 0, 0.2), inset -4px -5px 6px 0 rgba(255, 255, 255, 0.70);
       }
